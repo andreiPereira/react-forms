@@ -4,7 +4,7 @@ import List from "./pages/List";
 const App = () => {
 
   return (
-    
+
     <List />
     
   );

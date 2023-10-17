@@ -96,8 +96,6 @@ const CustomPaginationActionsTable = ({itens , busca, colums}) => {
 
   const rowsFilter = itens ? itens.filter(filtro => filtro.name.toLowerCase().includes(busca.toLowerCase())) : '';
 
-
-
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - itens.length) : 0;
 
@@ -112,7 +110,6 @@ const CustomPaginationActionsTable = ({itens , busca, colums}) => {
 
   const styleHeaderLeft = {
     fontWeight: 700,
-    minWidth: 200,
     backgroundColor: '#f2f2f2',
     borderRadius: '20px 0px 0px 0px'
   }
@@ -127,12 +124,8 @@ const CustomPaginationActionsTable = ({itens , busca, colums}) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  function createData(name) {
-    return { name };
-  }
   
-  React.useEffect(()=>{
+  useEffect(()=>{
     try{
       setCount(itens.length)
     }catch (e){
@@ -142,7 +135,7 @@ const CustomPaginationActionsTable = ({itens , busca, colums}) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+      <Table aria-label="custom pagination table">
         <TableHead >
           <TableRow>
             <TableCell sx={styleHeaderLeft} align="center"></TableCell>
@@ -191,7 +184,7 @@ const CustomPaginationActionsTable = ({itens , busca, colums}) => {
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25]}
+              rowsPerPageOptions={[]}
               colSpan={3}
               count={rowsFilter.length}
               rowsPerPage={rowsPerPage}
