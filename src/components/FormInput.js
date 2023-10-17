@@ -2,12 +2,12 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import { Grid, TextField } from '@mui/material';
 
-const FormInput = ({ name, control, label, type, size, required, defaultValue }) => {
+const FormInput = ({ name, control, label, type, isHalf, noRequired, defaultValue }) => {
 
     const defaults = {
         type : type ? type : 'text',
-        size: size ? size : 12,
-        required: required ? true : false,
+        size: isHalf ? 6 : 12,
+        noRequired: noRequired ? false : true,
     }
 
     return (
@@ -21,7 +21,7 @@ const FormInput = ({ name, control, label, type, size, required, defaultValue })
                         {...field}
                         label={label.charAt(0).toUpperCase() + label.slice(1)} // Usa o nome para gerar um label capitalizado
                         variant="outlined"
-                        required={defaults.required}
+                        required={defaults.noRequired}
                         type={defaults.type}
                         fullWidth
                     />

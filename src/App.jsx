@@ -17,8 +17,8 @@ const App = () => {
 
       <Grid container sx={{ mt: 4 }} px={6}>
 
-        <FormInput label="Login" name="user" control={control} required/>
-        <FormInput label="Senha" name="password" control={control} type='password' required/>
+        <FormInput label="Login" name="user" control={control} />
+        <FormInput label="Senha" name="password" control={control} type='password' />
 
         <Grid item xs={12} sm={12} sx={{ padding: '10px' }}>
           <Button variant="outlined" fullWidth type="submit">Submit</Button>
