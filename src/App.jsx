@@ -1,4 +1,5 @@
 import GoodForm from "./components/GoodForm";
+import BadForm from "./components/BadForm";
 
 import "./App.css";
 

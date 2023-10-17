@@ -64,6 +64,8 @@ const BadForm = () => {
     alert(JSON.stringify(userForm));
   };
 
+  console.log("RENDER");
+
   return (
     <div className="app-container">
       <div className="form-group">
