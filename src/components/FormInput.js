@@ -2,9 +2,15 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import { Grid, TextField } from '@mui/material';
 
-const FormInput = ({ name, control, label }) => {
+const FormInput = ({ name, control, label, type, size }) => {
+
+    const defaults = {
+        type : type ? type : 'text',
+        size: size ? size : 12,
+    }
+
     return (
-        <Grid item xs={12} sm={12} sx={{ padding: '10px' }}>
+        <Grid item xs={12} sm={defaults.size} sx={{ padding: '10px' }}>
             <Controller
                 name={name}
                 control={control}
@@ -14,12 +20,14 @@ const FormInput = ({ name, control, label }) => {
                         {...field}
                         label={label.charAt(0).toUpperCase() + label.slice(1)} // Usa o nome para gerar um label capitalizado
                         variant="outlined"
+                        type={defaults.type}
                         fullWidth
                     />
                 )}
             />
         </Grid>
     );
+
 };
 
 export default FormInput;
