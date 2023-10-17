@@ -17,12 +17,11 @@ const App = () => {
 
       <Grid container sx={{ mt: 4 }} px={6}>
 
-        <FormInput label="Login" name="user" control={control} />
-        <FormInput label="Senha" name="password" control={control} type='password' />
-        <FormInput label="Idade" name="age" control={control} type='number' size={6} />
+        <FormInput label="Login" name="user" control={control} required/>
+        <FormInput label="Senha" name="password" control={control} type='password' required/>
 
-        <Grid item xs={12} sm={6} mt={1.2}>
-          <Button variant="contained" sx={{paddingY:1.8}}  fullWidth type="submit">Submit</Button>
+        <Grid item xs={12} sm={12} sx={{ padding: '10px' }}>
+          <Button variant="outlined" fullWidth type="submit">Submit</Button>
         </Grid>
 
       </Grid>
